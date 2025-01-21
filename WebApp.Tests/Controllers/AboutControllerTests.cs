@@ -1,5 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using CasCap.Controllers;
 using Microsoft.Extensions.Logging;
 using Moq;

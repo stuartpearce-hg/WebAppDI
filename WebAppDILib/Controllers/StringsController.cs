@@ -1,9 +1,10 @@
 ﻿using Microsoft.Extensions.Logging;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 namespace CasCap.Controllers
 {
-    [RoutePrefix("api")]
-    public class StringsController : ApiController
+    [Route("api")]
+    [ApiController]
+    public class StringsController : ControllerBase
     {
         readonly ILogger<StringsController> _logger;
         readonly IDITestService _diTestSvc;
@@ -14,8 +15,8 @@ namespace CasCap.Controllers
             _diTestSvc = diTestSvc;
         }
 
-        [HttpGet]
-        public IHttpActionResult TestDI()
+        [HttpGet("TestDI")]
+        public IActionResult TestDI()
         {
             _logger.LogTrace("TestDI REST endpoint fired...");
             var strings = _diTestSvc.GetStringValues();

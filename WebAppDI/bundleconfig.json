@@ -1,0 +1,26 @@
+{
+  "bundles": [
+    {
+      "outputFileName": "wwwroot/css/Site.min.css",
+      "inputFiles": [
+        "wwwroot/lib/bootstrap/bootstrap.css",
+        "wwwroot/lib/bootstrap/bootstrap-theme.css",
+        "wwwroot/css/Site.css"
+      ]
+    },
+    {
+      "outputFileName": "wwwroot/js/Site.min.js",
+      "inputFiles": [
+        "wwwroot/lib/jquery/jquery-3.3.1.js",
+        "wwwroot/lib/bootstrap/bootstrap.js",
+        "wwwroot/lib/modernizr/modernizr-2.8.3.js",
+        "wwwroot/lib/jquery-validation/jquery.validate.js",
+        "wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+      ],
+      "minify": {
+        "enabled": true,
+        "renameLocals": true
+      }
+    }
+  ]
+}

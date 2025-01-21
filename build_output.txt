@@ -1,0 +1,42 @@
+
+>>>> xbuild tool is deprecated and will be removed in future updates, use msbuild instead <<<<
+
+XBuild Engine Version 14.0
+Mono, Version 6.8.0.105
+Copyright (C) 2005-2013 Various Mono authors
+
+Build started 01/21/2025 20:22:59.
+__________________________________________________
+/home/ubuntu/repos/WebAppDI/WebAppDI.sln:  warning : /home/ubuntu/repos/WebAppDI/WebAppDILib/WebAppDILib.csproj: The default XML namespace of the project must be the MSBuild XML namespace. If the project is authored in the MSBuild 2003 format, please add xmlns="http://schemas.microsoft.com/developer/msbuild/2003" to the <Project> element. If the project has been authored in the old 1.0 or 1.2 format, please convert it to MSBuild 2003 format.  
+/home/ubuntu/repos/WebAppDI/WebAppDI.sln:  warning : /home/ubuntu/repos/WebAppDI/WebApp.Tests/WebApp.Tests.csproj: The default XML namespace of the project must be the MSBuild XML namespace. If the project is authored in the MSBuild 2003 format, please add xmlns="http://schemas.microsoft.com/developer/msbuild/2003" to the <Project> element. If the project has been authored in the old 1.0 or 1.2 format, please convert it to MSBuild 2003 format.  
+/home/ubuntu/repos/WebAppDI/WebAppDI.sln:  warning : Don't know how to handle GlobalSection ExtensibilityGlobals, Ignoring.
+Project "/home/ubuntu/repos/WebAppDI/WebAppDI.sln" (default target(s)):
+	Target ValidateSolutionConfiguration:
+		Building solution configuration "Debug|Any CPU".
+	Target Build:
+/home/ubuntu/repos/WebAppDI/WebAppDILib/WebAppDILib.csproj: error : /home/ubuntu/repos/WebAppDI/WebAppDILib/WebAppDILib.csproj: The default XML namespace of the project must be the MSBuild XML namespace. If the project is authored in the MSBuild 2003 format, please add xmlns="http://schemas.microsoft.com/developer/msbuild/2003" to the <Project> element. If the project has been authored in the old 1.0 or 1.2 format, please convert it to MSBuild 2003 format.  
+/home/ubuntu/repos/WebAppDI/WebApp.Tests/WebApp.Tests.csproj: error : /home/ubuntu/repos/WebAppDI/WebApp.Tests/WebApp.Tests.csproj: The default XML namespace of the project must be the MSBuild XML namespace. If the project is authored in the MSBuild 2003 format, please add xmlns="http://schemas.microsoft.com/developer/msbuild/2003" to the <Project> element. If the project has been authored in the old 1.0 or 1.2 format, please convert it to MSBuild 2003 format.  
+	Task "MSBuild" execution -- FAILED
+	Done building target "Build" in project "/home/ubuntu/repos/WebAppDI/WebAppDI.sln".-- FAILED
+Done building project "/home/ubuntu/repos/WebAppDI/WebAppDI.sln".-- FAILED
+
+Build FAILED.
+
+Warnings:
+
+/home/ubuntu/repos/WebAppDI/WebAppDI.sln:  warning : /home/ubuntu/repos/WebAppDI/WebAppDILib/WebAppDILib.csproj: The default XML namespace of the project must be the MSBuild XML namespace. If the project is authored in the MSBuild 2003 format, please add xmlns="http://schemas.microsoft.com/developer/msbuild/2003" to the <Project> element. If the project has been authored in the old 1.0 or 1.2 format, please convert it to MSBuild 2003 format.  
+/home/ubuntu/repos/WebAppDI/WebAppDI.sln:  warning : /home/ubuntu/repos/WebAppDI/WebApp.Tests/WebApp.Tests.csproj: The default XML namespace of the project must be the MSBuild XML namespace. If the project is authored in the MSBuild 2003 format, please add xmlns="http://schemas.microsoft.com/developer/msbuild/2003" to the <Project> element. If the project has been authored in the old 1.0 or 1.2 format, please convert it to MSBuild 2003 format.  
+/home/ubuntu/repos/WebAppDI/WebAppDI.sln:  warning : Don't know how to handle GlobalSection ExtensibilityGlobals, Ignoring.
+
+Errors:
+
+/home/ubuntu/repos/WebAppDI/WebAppDI.sln (default targets) ->
+(Build target) ->
+
+	/home/ubuntu/repos/WebAppDI/WebAppDILib/WebAppDILib.csproj: error : /home/ubuntu/repos/WebAppDI/WebAppDILib/WebAppDILib.csproj: The default XML namespace of the project must be the MSBuild XML namespace. If the project is authored in the MSBuild 2003 format, please add xmlns="http://schemas.microsoft.com/developer/msbuild/2003" to the <Project> element. If the project has been authored in the old 1.0 or 1.2 format, please convert it to MSBuild 2003 format.  
+	/home/ubuntu/repos/WebAppDI/WebApp.Tests/WebApp.Tests.csproj: error : /home/ubuntu/repos/WebAppDI/WebApp.Tests/WebApp.Tests.csproj: The default XML namespace of the project must be the MSBuild XML namespace. If the project is authored in the MSBuild 2003 format, please add xmlns="http://schemas.microsoft.com/developer/msbuild/2003" to the <Project> element. If the project has been authored in the old 1.0 or 1.2 format, please convert it to MSBuild 2003 format.  
+
+	 3 Warning(s)
+	 2 Error(s)
+
+Time Elapsed 00:00:00.1584180

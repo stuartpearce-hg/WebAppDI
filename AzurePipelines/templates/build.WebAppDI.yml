@@ -12,30 +12,31 @@ jobs:
   - template: variables.WebAppDI.yml
   steps:
 
-  - task: NuGetToolInstaller@0
+  - task: UseDotNet@2
+    displayName: 'Install .NET 9 SDK'
+    inputs:
+      version: '9.0.x'
+      includePreviewVersions: true
     
-  - task: NuGetCommand@2
+  - task: DotNetCoreCLI@2
+    displayName: 'dotnet restore'
     inputs:
-      restoreSolution: $(projectName).sln
+      command: restore
+      projects: '$(projectName).sln'
   
-  - task: VSBuild@1
+  - task: DotNetCoreCLI@2
+    displayName: 'dotnet build'
     inputs:
-      solution: $(projectName).sln
-      msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(Build.ArtifactStagingDirectory)/$(projectName).zip"'
-      platform: $(buildPlatform)
-      configuration: $(buildConfiguration)
+      command: build
+      projects: '$(projectName).sln'
+      arguments: '--configuration $(buildConfiguration) --no-restore /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(Build.ArtifactStagingDirectory)/$(projectName).zip"'
   
-  - task: PublishSymbols@2
-    displayName: 'Publish symbols path'
+  - task: DotNetCoreCLI@2
+    displayName: 'dotnet test'
     inputs:
-      SearchPattern: '**\bin\**\*.pdb'
-      PublishSymbols: false
-    condition: and(succeeded(), eq(variables['buildConfiguration'], 'Debug'))
-
-  - task: VSTest@2
-    inputs:
-      platform: $(buildPlatform)
-      configuration: $(buildConfiguration)
+      command: test
+      projects: '**/*Tests/*.csproj'
+      arguments: '--configuration $(buildConfiguration) --no-build'
     condition: and(succeeded(), eq(variables['buildConfiguration'], 'Debug'))
 
   - task: PublishPipelineArtifact@0
