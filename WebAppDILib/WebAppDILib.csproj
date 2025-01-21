@@ -7,8 +7,12 @@
 
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0-preview.1.24080.9" />
-    <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0-preview.1.24080.9" />
   </ItemGroup>
+
+  <!-- Remove explicit package references as they are included in Microsoft.AspNetCore.App -->
+  <PropertyGroup>
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest-all</AnalysisLevel>
+  </PropertyGroup>
 
 </Project>
