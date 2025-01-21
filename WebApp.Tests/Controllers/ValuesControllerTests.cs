@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using CasCap.Controllers;
 using Microsoft.Extensions.Logging;
 using Moq;
+using System;
 using System.Collections.Generic;
 
 namespace CasCap.Tests.Controllers
@@ -34,8 +35,16 @@ namespace CasCap.Tests.Controllers
 
             // Assert
             Assert.IsNotNull(result);
-            CollectionAssert.AreEqual(expectedValues, result.Value as List<int>);
-            _loggerMock.Verify(l => l.LogTrace(It.IsAny<string>()), Times.Once);
+            var okResult = result as OkObjectResult;
+            Assert.IsNotNull(okResult);
+            CollectionAssert.AreEqual(expectedValues, okResult.Value as List<int>);
+            _loggerMock.Verify(l => l.Log(
+                LogLevel.Trace,
+                It.IsAny<EventId>(),
+                It.Is<It.IsAnyType>((v, t) => true),
+                It.IsAny<Exception>(),
+                It.Is<Func<It.IsAnyType, Exception, string>>((v, t) => true)),
+                Times.Once);
         }
     }
 }

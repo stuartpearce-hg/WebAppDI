@@ -1,6 +1,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.AspNetCore.Mvc;
 using CasCap.Controllers;
+using CasCap.ViewModels;
 using Microsoft.Extensions.Logging;
 using Moq;
 using System.Collections.Generic;
