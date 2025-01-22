@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 namespace CasCap.Controllers
 {
-    [Route("api")]
+    [Route("api/[controller]")]
     [ApiController]
     public class StringsController : ControllerBase
     {
