@@ -1,5 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using OpenTelemetry;
+using OpenTelemetry.Trace;
 namespace CasCap.Controllers
 {
     [Route("api/[controller]")]
@@ -18,8 +21,15 @@ namespace CasCap.Controllers
         [HttpGet("TestDI")]
         public IActionResult TestDI()
         {
+            using var activity = WebAppDI.Telemetry.StartActivity("StringsController.TestDI");
             _logger.LogTrace("TestDI REST endpoint fired...");
+            
+            activity?.SetTag("controller", "Strings");
+            activity?.SetTag("action", "TestDI");
+            
             var strings = _diTestSvc.GetStringValues();
+            activity?.SetTag("values_count", strings.Count);
+            
             return Ok(strings);
         }
     }
