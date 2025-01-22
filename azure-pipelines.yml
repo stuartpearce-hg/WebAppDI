@@ -1,0 +1,16 @@
+trigger:
+  - main
+  - devin/*
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+extends:
+  template: AzurePipelines/templates/build.WebAppDI.yml
+  parameters:
+    projectName: 'WebAppDI'
